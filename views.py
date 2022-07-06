@@ -9,7 +9,7 @@ api_hash = os.environ.get("API_HASH")
 token = os.environ.get("TOKEN")
 app = Client("views", bot_token=token, api_id = api_id, api_hash = api_hash)
 
-@bot.message_handler(commands=['start'])
+@app.message_handler(commands=['start'])
 def start(message):
     Name = message.chat.first_name
     User = message.from_user.username 
@@ -23,7 +23,7 @@ Your ID : {ID}
 - - - - - - - - - 
 Developer : @VR_LA
 </strong>""" ,parse_mode='html')
-@bot.message_handler(func=lambda m: True)
+@app.message_handler(func=lambda m: True)
 def Get(message):
     msg = message.text 
     class GI():
