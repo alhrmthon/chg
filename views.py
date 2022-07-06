@@ -1,6 +1,8 @@
 import os
 import requests
+import asyncio
 import telebot
+from pyrogram import Client,filters,enums
 
 api_id = int(os.environ.get("APP_ID"))
 api_hash = os.environ.get("API_HASH")
